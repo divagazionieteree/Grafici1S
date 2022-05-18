@@ -18,6 +18,8 @@ app.iconbitmap('omron.ico')
 
 CheckB = IntVar() 
 CheckC = IntVar() 
+CheckD = IntVar() 
+CheckE = IntVar() 
 
 #     *****      Funzione Bottone      *****
 def btnCaricaFile():
@@ -35,6 +37,12 @@ def btnCaricaFile():
     if CheckC.get() == 1 :     
         fig.add_trace(go.Scatter(x=df["index"], y=df["C"],mode='lines',name='Actual Torque'))
 
+    if CheckD.get() == 1 :  
+        fig.add_trace(go.Scatter(x=df["index"], y=df["D"],mode='lines',name='Parametro D'))
+
+    if CheckE.get() == 1 :     
+        fig.add_trace(go.Scatter(x=df["index"], y=df["E"],mode='lines',name='Parametro E'))
+
     fig.show()
 
 #     *****     Grafica Tkinter     *****
@@ -44,6 +52,10 @@ FlagB = tkr.Checkbutton(app,text= "Velocità", variable = CheckB, onvalue = 1, o
 FlagB.grid(column=0, row=1, padx=10, pady=10)
 FlagC = tkr.Checkbutton(app,text= "Coppia", variable = CheckC, onvalue = 1, offvalue = 0)
 FlagC.grid(column=0, row=2, padx=10, pady=10)
+FlagD = tkr.Checkbutton(app,text= "Par D", variable = CheckD, onvalue = 1, offvalue = 0)
+FlagD.grid(column=0, row=3, padx=10, pady=10)
+FlagE = tkr.Checkbutton(app,text= "Par E", variable = CheckE, onvalue = 1, offvalue = 0)
+FlagE.grid(column=0, row=4, padx=10, pady=10)
 
-#     ****** Visualizzazione App     ***** develop prova1
+#     ****** Visualizzazione App     ***** develop
 app.mainloop()
