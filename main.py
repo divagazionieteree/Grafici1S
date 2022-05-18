@@ -19,6 +19,7 @@ app.iconbitmap('omron.ico')
 CheckB = IntVar() 
 CheckC = IntVar() 
 
+#     *****      Funzione Bottone      *****
 def btnCaricaFile():
     files = filedialog.askopenfilenames()
     str = ''.join(files)
@@ -36,10 +37,13 @@ def btnCaricaFile():
 
     fig.show()
 
+#     *****     Grafica Tkinter     *****
 BottoneCaricaFile = tkr.Button(app, text ="Carica File", command = btnCaricaFile)
 BottoneCaricaFile.grid(column=0, row=0, padx=10, pady=10)
 FlagB = tkr.Checkbutton(app,text= "Velocità", variable = CheckB, onvalue = 1, offvalue = 0)
 FlagB.grid(column=0, row=1, padx=10, pady=10)
 FlagC = tkr.Checkbutton(app,text= "Coppia", variable = CheckC, onvalue = 1, offvalue = 0)
 FlagC.grid(column=0, row=2, padx=10, pady=10)
+
+#     ****** Visualizzazione App     ***** develop
 app.mainloop()
