@@ -1,0 +1,35 @@
+<html>
+
+    <head>
+        <title>Primo Progetto Pyscript</title>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <py-env>
+            - numpy
+            - seaborn
+            - pandas
+            - matplotlib
+        </py-env>
+    </head>
+    
+    <body>
+    
+    <div id="plot"></div>
+
+    <py-button id="btnCarica" label="Carica File" pys-onclick="btnCaricaFun" style="margin-top: 50px; margin-bottom: 50px; margin-left: 50px; margin-right: 50px; flex-direction: row;">
+
+    <py-script>
+import pandas as pd
+import tkinter as tkr
+from tkinter import filedialog
+
+def btnCaricaFun()
+    files = filedialog.askopenfilenames()
+    str = ''.join(files)
+    df = pd.read_csv(str, sep=';')
+    
+    </py-script>
+    
+    </body>
+    
+    </html> 
